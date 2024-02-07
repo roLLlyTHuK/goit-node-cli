@@ -1,4 +1,5 @@
 import { program } from "commander";
+//так як за замовченням в дз стояв імпорт commander через ES module , то ми використали імпорт ES module
 import {
   listContacts,
   getContactById,
