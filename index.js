@@ -1,5 +1,4 @@
 import { program } from "commander";
-//так як за замовченням в дз стояв імпорт commander через ES module , то ми використали імпорт ES module
 import {
   listContacts,
   getContactById,
@@ -18,26 +17,21 @@ program.parse();
 
 const options = program.opts();
 
-// TODO: рефакторити
 async function invokeAction({ action, id, name, email, phone }) {
   switch (action) {
     case "list":
-      // ...
       console.table(await listContacts());
       break;
 
     case "get":
-      // ... id
       console.log(" Contact by ID:>> ", await getContactById(id));
       break;
 
     case "add":
-      // ... name email phone
       console.log("add Contact:>> ", await addContact(name, email, phone));
       break;
 
     case "remove":
-      // ... id
       console.log("remove Contact:>> ", await removeContact(id));
 
       break;
